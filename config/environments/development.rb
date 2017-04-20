@@ -14,6 +14,10 @@ $stdout.sync = true
 
   # Better_Errors Config
   BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
+
+  #Config Error WebConsole
+  config.web_console.whitelisted_ips = ENV['TRUSTED_IP']
+
   # Devise Email Confirmation
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
