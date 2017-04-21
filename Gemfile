@@ -9,6 +9,8 @@ gem 'rails-i18n'
 gem 'foreman'
 #Flexible authentication solution for Rails with Warden.
 gem 'devise'
+#NotifyJs
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 #Rails gem of the Bootstrap based admin theme SB Admin 2.
 gem 'bootstrap_sb_admin_base_v2'
 # Translations for the devise gem
