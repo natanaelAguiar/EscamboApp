@@ -51,10 +51,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-# Better error page for Rack apps
+  # Better error page for Rack apps
   gem "better_errors"
-  #Generate Entity-Relationship Diagrams for Rails applications
+  # Generate Entity-Relationship Diagrams for Rails applications
   gem 'rails-erd'
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker'
+
 end
 
 group :development do
