@@ -9,8 +9,14 @@ gem 'rails-i18n'
 gem 'foreman'
 #Flexible authentication solution for Rails with Warden.
 gem 'devise'
-#NotifyJs
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+source 'https://rails-assets.org' do
+  #NotifyJs
+  gem 'rails-assets-notifyjs'
+  #BootBoxJS
+  gem 'rails-assets-bootbox'
+  # BootStrap
+  gem 'rails-assets-bootstrap'
+end
 #Rails gem of the Bootstrap based admin theme SB Admin 2.
 gem 'bootstrap_sb_admin_base_v2'
 # Translations for the devise gem
@@ -30,8 +36,6 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# BootStrap
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

@@ -28,6 +28,9 @@ puts "CATEGORIAS cadastradas com sucesso"
 
 puts "Cadastrando o ADMINISTRADOR...."
 
-if Admin.create!(email: "admin@admin.com", password: "123123", password_confirmation: "123123")
+if Admin.create!(name: "Administrador Geral",
+                email: "admin@admin.com",
+                password: "123123",
+                password_confirmation: "123123")
     puts "ADMINISTRADOR criado com sucesso"
 end
