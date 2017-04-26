@@ -1,9 +1,16 @@
+
+
+
+    #COLOCAR O SITE EM I18N
+
+
+
 class Backoffice::AdminsController < BackofficeController
 
     before_action :set_admin, only: [:edit, :update, :destroy]
 
     def index
-        @admins = Admin.all
+        @admins = Admin.with_full_access
     end
 
     def new
@@ -14,7 +21,7 @@ class Backoffice::AdminsController < BackofficeController
         @admin = Admin.create(params_admin)
 
         if @admin.save
-            redirect_to backoffice_admins_path, notice: "O Administador #{@admin.email} foi salvo com sucesso!"
+            redirect_to backoffice_admins_path, notice: "O Administador #{@admin.email} " << I18n.t('menssages.save_success')
         else
             render :new
         end

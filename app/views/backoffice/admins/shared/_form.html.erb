@@ -18,22 +18,22 @@
         <div class="col-lg-6">
             <%= form_for([:backoffice, @admin]) do |f| %>
              <div class="form-group">
-                <label>Nome</label>
+                <%= f.label :name %>
                 <%= f.text_field :name, class: "form-control", placeholder: "Nome" %>
             </div>
             <div class="form-group">
-                <label>Email</label>
+                <%= f.label :email %>
                 <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
             </div>
             <div class="form-group">
-                <label>Senha</label>
+                <%= f.label :password %>
                 <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
             </div>
              <div class="form-group">
-                <label>Confirmação Senha</label>
+                <%= f.label :password_confirmation %>
                 <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
             </div>
-            <%= f.submit "Salvar", class: "btn btn-default"%>
+            <%= f.submit "#{t('menssages.save_btn')}", class: "btn btn-default"%>
             <% end %>
         </div>
     </div>

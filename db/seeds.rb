@@ -31,6 +31,8 @@ puts "Cadastrando o ADMINISTRADOR...."
 if Admin.create!(name: "Administrador Geral",
                 email: "admin@admin.com",
                 password: "123123",
-                password_confirmation: "123123")
+                password_confirmation: "123123",
+                role: 0
+                )
     puts "ADMINISTRADOR criado com sucesso"
 end

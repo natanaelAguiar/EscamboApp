@@ -11,9 +11,10 @@ class Backoffice::CategoriesController < BackofficeController
   end
 
   def create
-    @category = Category.new(category_params)
-    if @category.save
-        redirect_to backoffice_categories_path, notice: "A Categoria #{@category.description} foi salva com sucesso!"
+    @category = CategoryService.create(category_params)
+
+    unless @category.errors.any?
+        redirect_to backoffice_categories_path, notice: "A Categoria #{@category.description} " << I18n.t('menssages.save_success')
     else
         render :new
     end
