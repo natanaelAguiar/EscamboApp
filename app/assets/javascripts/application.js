@@ -13,4 +13,3 @@
 //= require jquery
 //= require notifyjs
 //= require jquery_ujs
-//= require turbolinks
