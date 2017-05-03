@@ -20,6 +20,10 @@ $stdout.sync = true
 
   # Devise Email Confirmation
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # Mailer Catcher
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
+  config.action_mailer.raise_delivery_errors = false
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true

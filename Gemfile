@@ -11,6 +11,10 @@ gem 'foreman'
 gem 'pundit'
 # Flexible authentication solution for Rails with Warden.
 gem 'devise'
+# Translations for the devise gem
+gem 'devise-i18n'
+# Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
+gem 'enum_help'
 source 'https://rails-assets.org' do
   #NotifyJs
   gem 'rails-assets-notifyjs'
@@ -21,8 +25,6 @@ source 'https://rails-assets.org' do
 end
 #Rails gem of the Bootstrap based admin theme SB Admin 2.
 gem 'bootstrap_sb_admin_base_v2'
-# Translations for the devise gem
-gem 'devise-i18n'
 # Bundle gem
 gem 'bundler', '>= 1.8.4'
 # Use sqlite3 as the database for Active Record
@@ -65,6 +67,9 @@ group :development, :test do
 end
 
 group :development do
+  # Catches mail and serves it through a dream.
+  gem 'mailcatcher'
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

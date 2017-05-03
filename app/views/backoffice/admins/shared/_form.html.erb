@@ -17,7 +17,7 @@
     <div class="panel-body">
         <div class="col-lg-6">
             <%= form_for([:backoffice, @admin]) do |f| %>
-             <div class="form-group">
+            <div class="form-group">
                 <%= f.label :name %>
                 <%= f.text_field :name, class: "form-control", placeholder: "Nome" %>
             </div>
@@ -25,18 +25,27 @@
                 <%= f.label :email %>
                 <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
             </div>
-            <div class="form-group">
-                <%= f.label :password %>
-                <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-            </div>
-             <div class="form-group">
-                <%= f.label :password_confirmation %>
-                <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
-            </div>
+            <% if policy(@admin).edit? %>
+                <div class="form-group">
+                    <%= f.label :role %>
+                    <%= f.collection_radio_buttons(:role, options_for_roles, :id, :description) do |b| %>
+                      <div class="radio">
+                        <%= b.label { b.radio_button + b.text} %>
+                      </div>
+                    <% end %>
+                </div>
+            <% end %>
+        <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+        </div>
+        <div class="form-group">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+        </div>
             <%= f.submit "#{t('menssages.save_btn')}", class: "btn btn-default"%>
             <% end %>
         </div>
     </div>
-</div>
 </div>
 <!-- /.panel-default -->
